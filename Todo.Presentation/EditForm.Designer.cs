@@ -55,11 +55,11 @@
             // checkBox
             // 
             this.checkBox.AutoSize = true;
-            this.checkBox.Location = new System.Drawing.Point(133, 64);
+            this.checkBox.Location = new System.Drawing.Point(191, 61);
             this.checkBox.Name = "checkBox";
-            this.checkBox.Size = new System.Drawing.Size(105, 17);
+            this.checkBox.Size = new System.Drawing.Size(68, 17);
             this.checkBox.TabIndex = 2;
-            this.checkBox.Text = "Deadline passed";
+            this.checkBox.Text = "Deadline";
             this.checkBox.UseVisualStyleBackColor = true;
             this.checkBox.CheckedChanged += new System.EventHandler(this.checkBox_CheckedChanged);
             // 
