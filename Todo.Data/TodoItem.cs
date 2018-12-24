@@ -10,22 +10,22 @@ namespace Todo.Data
     {
         public Guid Id { get; set; }
         public string Description { get; set; }
-        public bool Done { get; set; }
+        public bool NotDone { get; set; }
         public DateTime Deadline { get; set; }
 
         public override string ToString()
         {
-            var stringDone = Done ? "Not done" : "Done" ;
-            return $"{Id} - {Description} - {stringDone}" +( Done ? $"- {Deadline:MM/dd/yyyy}" : "" ) ;
+            var stringDone = NotDone ? "Not Done" : "Done" ;
+            return $"{Id} - {Description} - {stringDone}" +( NotDone ? $"- {Deadline:MM/dd/yyyy}" : "" ) ;
         }
 
-        public TodoItem(string description, bool done, DateTime? deadline = null)
+        public TodoItem(string description, bool notDone, DateTime? deadline = null)
         {
             Id = Guid.NewGuid();
             Description = description;
-            Done = done;
+            NotDone = notDone;
             if (!deadline.HasValue) return;
-            if (done)
+            if (notDone)
                 Deadline = deadline.Value;
         }
 

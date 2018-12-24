@@ -20,6 +20,7 @@ namespace Todo.Presentation
         {
             InitializeComponent();
             _listPassed = listPassed;
+            dateTimePicker.Hide();
 
         }
 
@@ -36,9 +37,11 @@ namespace Todo.Presentation
 
         private void checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            _item.Done = checkBox.Checked;
+            _item.NotDone = checkBox.Checked;
             if(checkBox.Checked)
                 dateTimePicker.Show();
+            else
+                dateTimePicker.Hide();
         }
 
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
