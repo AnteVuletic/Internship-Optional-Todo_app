@@ -14,11 +14,11 @@ namespace Todo.Presentation
 {
     public partial class Todo : Form
     {
-        private ItemList _listOfItems;
+        private ItemRepository _listOfItems;
         public Todo()
         {
             InitializeComponent();
-            _listOfItems = new ItemList();
+            _listOfItems = new ItemRepository();
             RefreshTodoList();
         }
 

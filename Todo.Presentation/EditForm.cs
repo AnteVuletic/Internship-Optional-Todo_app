@@ -15,8 +15,8 @@ namespace Todo.Presentation
     public partial class EditForm : Form
     {
         private TodoItem _item;
-        private ItemList _listPassed;
-        public EditForm(TodoItem item,ItemList listPassed)
+        private ItemRepository _listPassed;
+        public EditForm(TodoItem item,ItemRepository listPassed)
         {
             InitializeComponent();
             _item = item;

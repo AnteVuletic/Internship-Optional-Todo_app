@@ -15,8 +15,8 @@ namespace Todo.Presentation
     public partial class CreateForm : Form
     {
         private TodoItem _item = new TodoItem("",false);
-        private ItemList _listPassed;
-        public CreateForm(ItemList listPassed)
+        private ItemRepository _listPassed;
+        public CreateForm(ItemRepository listPassed)
         {
             InitializeComponent();
             _listPassed = listPassed;
