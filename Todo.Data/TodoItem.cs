@@ -24,7 +24,7 @@ namespace Todo.Data
             Id = Guid.NewGuid();
             Description = description;
             IsDone = isDone;
-            if (!deadline.HasValue && !IsDone)
+            if (deadline.HasValue && !IsDone)
                 Deadline = deadline.Value;
         }
 

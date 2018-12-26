@@ -22,8 +22,8 @@ namespace Todo.Presentation
             _item = item;
             _listPassed = listPassed;
             noteTextbox.Text = item.Description;
-            checkBox.Checked = item.NotDone;
-            if (item.NotDone)
+            checkBox.Checked = !item.IsDone;
+            if (!item.IsDone)
             {
                 dateTimePicker.Show();
                 dateTimePicker.Value = item.Deadline;
@@ -39,8 +39,8 @@ namespace Todo.Presentation
 
         private void checkBox_CheckedChanged(object sender, EventArgs e)
         {
-            _item.NotDone = checkBox.Checked;
-            if (_item.NotDone)
+            _item.IsDone = checkBox.Checked;
+            if (!_item.IsDone)
                 dateTimePicker.Show();
             else
                 dateTimePicker.Hide();

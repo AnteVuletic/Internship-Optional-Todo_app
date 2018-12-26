@@ -7,11 +7,11 @@ using Todo.Data;
 
 namespace Todo.Domain
 {
-    public class ItemList
+    public class ItemRepository
     {
         public static List<TodoItem> CurrentList = new List<TodoItem>();
 
-        public ItemList()
+        public ItemRepository()
         {
             var item = new TodoItem("This is just an test", false);
             CurrentList.Add(item);
@@ -22,11 +22,11 @@ namespace Todo.Domain
             return CurrentList;
         }
 
-        public TodoItem GetItem(Guid guidPassed)
+        public TodoItem GetByItem(Guid id)
         {
             foreach (var todoItem in CurrentList)
             {
-                if (todoItem.Id == guidPassed)
+                if (todoItem.Id == id)
                     return todoItem;
             }
 
@@ -52,15 +52,15 @@ namespace Todo.Domain
         public bool EditItem(TodoItem argItemPassed)
         {
             var guidOfItemPassed = argItemPassed.Id;
-            var ifFound = false;
+            var isFound = false;
             foreach (var todoItem in CurrentList)
             {
                 if (todoItem.Id == guidOfItemPassed) continue;
                 CurrentList.Remove(todoItem);
-                ifFound = true;
+                isFound = true;
             }
             CurrentList.Add(argItemPassed);
-            return ifFound;
+            return isFound;
         }
     }
 }
