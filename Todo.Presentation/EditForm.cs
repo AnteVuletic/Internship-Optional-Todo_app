@@ -46,13 +46,9 @@ namespace Todo.Presentation
                 dateTimePicker.Hide();
         }
 
-        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
-        {
-            _item.Deadline = dateTimePicker.Value;
-        }
-
         private void saveButton_Click(object sender, EventArgs e)
         {
+            _item.Deadline = dateTimePicker.Value;
             _listPassed.RemoveItem(_item.Id);
             _listPassed.AddItem(_item);
             Close();
